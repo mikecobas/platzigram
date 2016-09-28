@@ -213,3 +213,12 @@ $avatar-size-big: 150px;
     }
   }
 }
+.modal {
+  
+    img {
+      max-width: 95%;
+    }
+    .fa-heart {
+      display: inline-block;
+    }
+}

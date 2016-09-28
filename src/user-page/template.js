@@ -23,10 +23,20 @@ module.exports = function (user) {
       <div class="row">
         ${user.pictures.map(function (picture) {
           return yo`<div class="col s12 m6 l4">
-            <div class="picture-container">
+            <a href="/${user.username}/${picture.id}" class="picture-container">
               <img src="${picture.src}" class="picture" />
               <div class="likes"><i class="fa fa-heart"></i> ${picture.likes}</div>
-            </div>
+            </a>
+            <div id="modal${picture.id}" class="modal modal-fixed-footer">
+                <div class="modal-content ">
+                  <img src="${picture.src}" class="center-align"/>
+                </div>
+                <div class="modal-footer">
+                  <div class="waves-effect waves-green btn-flat likes">
+                   <i class="fa fa-heart"></i> ${translate('likes', { likes: picture.likes })}
+                  </div>
+                </div>
+              </div>
           </div>`;
         })}
       </div>

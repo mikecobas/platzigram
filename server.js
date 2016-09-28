@@ -34,6 +34,9 @@ app.get('/signin', function (req, res) {
 app.get('/:username', function(req, res){
 	res.render('index', {title: `Platzigram - ${req.params.username}` });
 });
+app.get('/:username/:id', function(req, res){
+	res.render('index', {title: `Platzigram - ${req.params.username}` });
+});
 app.get('/api/user/:username', function (req, res){
 	const user = {
 		username:'mikecobas',
